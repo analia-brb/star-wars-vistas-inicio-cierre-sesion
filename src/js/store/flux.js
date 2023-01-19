@@ -6,7 +6,7 @@ const getState = ({
     return {
         store: {
             personajes: [],
-			personajesInfo: [{}],
+			personajesInfo: {},
             favoritos: []
         },
         actions: {
@@ -26,7 +26,7 @@ const getState = ({
             //     }))
             //     .catch((err) => console.log(err));
             obtenerInfoPersonajes: () => {
-                fetch(" https://www.swapi.tech/api/people")
+                fetch("https://www.swapi.tech/api/people/")
 				.then((res) => res.json())
 				.then((data) => setStore({
 				        personajes: data.results
@@ -35,19 +35,21 @@ const getState = ({
             },
 
 			obtenerCadaPersonaje: (id) => {
-				fetch("https://www.swapi.tech/api/people/"+id)
+				fetch("https://www.swapi.tech/api/people"+id)
 				.then(res=> res.json())
 				.then((data) => setStore({personajesInfo: data.result}))
                 .catch((err) => console.log(err));
 			  },
 
               agregarFavoritos: (name) => {
-                console.log(name);
-                let store= getStore(); 
+                // console.log(name);
+                const store= getStore(); 
                 //Lo declaro para llamar a los objetos de Store
-                setStore[{favoritos: [...store.favoritos, name]}]
+                setStore({favoritos: [...store.favoritos, name]});
+                console.log(store.favoritos);
+                console.log(name);
 
-              }
+              },
         },
 
 

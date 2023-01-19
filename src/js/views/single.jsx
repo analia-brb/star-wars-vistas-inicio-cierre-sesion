@@ -5,11 +5,11 @@ import { Context } from "../store/appContext";
 import Profile from "../component/profile.jsx"
 
 export const Single = (props) => {
-  const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context); //nos hace disponible todo lo que está en store y en actions
   const params = useParams();
   // const [personajesInfo, setPersonajesInfo] = useState({})
 
-  console.log(useParams());
+  // console.log(useParams());
 
   // function obtenerCadaPersonaje (){
   //   fetch("https://www.swapi.tech/api/people/"+params.theid)
@@ -20,6 +20,8 @@ export const Single = (props) => {
   useEffect (() => {
     actions.obtenerCadaPersonaje(params.theid);
   },[])
+  
+  
 
   return (
     <div className="jumbotron">

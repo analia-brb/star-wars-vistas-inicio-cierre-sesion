@@ -25,7 +25,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="text-center mt-5">
+      <div className="container mx-auto d-block">
         {store.personajes.map((item) => (
           <Card nombre={item.name} key={item.uid} id={item.uid} />
           // Le mando nombre y uid y lo coloca en el componente Card
