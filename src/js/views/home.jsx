@@ -7,6 +7,9 @@ import {Context} from "../store/appContext.js"
 
 export const Home = () => {
   const [personajes, setPersonajes] = useState([]);
+  const {store}=useContext(Context)
+  console.log(store.demo);
+  console.log(store.personajes);
 
   // function obtenerInfoPersonajes() {
   //   fetch(" https://www.swapi.tech/api/people")

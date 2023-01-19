@@ -6,7 +6,8 @@ const getState = ({
     return {
         store: {
             personajes: [],
-			personajesInfo: useState[{}]
+			personajesInfo: [{}],
+            favoritos: []
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -28,7 +29,7 @@ const getState = ({
                 fetch(" https://www.swapi.tech/api/people")
 				.then((res) => res.json())
 				.then((data) => setStore({
-				        personaje: data.result
+				        personajes: data.results
 				    }))
 				.catch((err) => console.log(err));
             },
@@ -37,7 +38,16 @@ const getState = ({
 				fetch("https://www.swapi.tech/api/people/"+id)
 				.then(res=> res.json())
 				.then((data) => setStore({personajesInfo: data.result}))
+                .catch((err) => console.log(err));
 			  },
+
+              agregarFavoritos: (name) => {
+                console.log(name);
+                let store= getStore(); 
+                //Lo declaro para llamar a los objetos de Store
+                setStore[{favoritos: [...store.favoritos, name]}]
+
+              }
         },
 
 
@@ -51,9 +61,7 @@ const getState = ({
         //     const demo = store.demo.map((elm, i) => {
         //         if (i === index) elm.background = color;
         //         return elm;
-        //     });
-
-        //reset the global store
+        //     });   //reset the global store            
 
     };
 };
