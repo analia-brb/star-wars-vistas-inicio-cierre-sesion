@@ -20,7 +20,7 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <div>
+    <div className="container mx-auto d-block bg-black">
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />

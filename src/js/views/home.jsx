@@ -24,13 +24,13 @@ export const Home = () => {
   // console.log(personajes);
 
   return (
-    <>
-      <div className="container mx-auto d-block">
+    
+      <div className="container d-flex row">
         {store.personajes.map((item) => (
           <Card nombre={item.name} key={item.uid} id={item.uid} />
           // Le mando nombre y uid y lo coloca en el componente Card
         ))}
       </div>
-    </>
+    
   );
 };

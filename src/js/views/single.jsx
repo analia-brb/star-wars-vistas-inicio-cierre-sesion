@@ -24,9 +24,13 @@ export const Single = (props) => {
   
 
   return (
-    <div className="jumbotron">
-      <h1 className="display-4"> Detalles de personajes </h1>
-      <p className="display-4"> Name: {store.personajesInfo.properties?.name}</p>
+    <div className="jumbotron text-light">
+
+
+
+      
+    <img src="" alt="" />
+      <p className="display-6"> Name: {store.personajesInfo.properties?.name}</p>
       <p className="display-4"> Birth Date: {store.personajesInfo.properties?.birth_year}</p>
       <p className="display-4"> Gender: {store.personajesInfo.properties?.gender}</p>
       <p className="display-4"> Height: {store.personajesInfo.properties?.height}</p>
