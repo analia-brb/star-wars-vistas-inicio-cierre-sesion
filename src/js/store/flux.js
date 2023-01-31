@@ -7,8 +7,12 @@ const getState = ({
         store: {
             personajes: [],
             personajesInfo: {},
-            favoritos: []
+            favoritos: [],
+            auth: false,
+            view: "",
+            hidden: "visually-hidden"
         },
+
         actions: {
             // Use getActions to call a function within a fuction
             exampleFunction: () => {
@@ -25,6 +29,50 @@ const getState = ({
             //         personaje: data.result
             //     }))
             //     .catch((err) => console.log(err));
+
+            login: (userEmail, userPassword) => {
+                fetch('https://3000-analiabrb-authenticatio-ff838dpsmso.ws-us84.gitpod.io/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": userEmail,
+                            "password": userPassword
+                        }) // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        console.log(response.status);
+                        if (response.status === 200) {
+                            setStore({
+                                auth: true,
+                                view: "visually-hidden",
+                                hidden: ""
+                            })
+                        }
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                        if (data.msg === "Bad email or password") {
+                            alert(data.msg)
+                        }
+                        localStorage.setItem("token", data.access_token)
+                    })
+                    .catch((err) => console.log(err))
+            },
+
+            logout: () => {
+                localStorage.removeItem('token');
+                setStore({
+                    auth: false,
+                    view: "",
+                    hidden: "visually-hidden"
+                })
+            },
+
+
             obtenerInfoPersonajes: () => {
                 fetch("https://www.swapi.tech/api/people/")
                     .then((res) => res.json())

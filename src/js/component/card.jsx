@@ -15,7 +15,7 @@ const Card = (props) => {
       <h5 className="card-title text-info">{props.nombre}</h5>
       <p className="card-text text-light">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       <Link to={"/single/"+props.id} className="btn btn-light float-start mx-3"><b>Learn more!</b></Link>
-      <button className="btn btn-black" onClick={()=>{actions.agregarFavoritos(props.nombre); console.log(props.nombre);}}><i class="fa fa-heart text-danger"></i></button>
+      <button className="btn btn-black" onClick={()=>{actions.agregarFavoritos(props.nombre); console.log(props.nombre);}}><i className="fa fa-heart text-danger"></i></button>
     </div>
   </div>
     )

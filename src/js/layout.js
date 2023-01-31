@@ -5,7 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home.jsx";
 // import { Demo } from "./views/demo";
 import { Single } from "./views/single.jsx";
-import { Singlevehicle } from "./views/single.jsx";
+// import { Singlevehicle } from "./views/single.jsx";
+import { Login } from "./views/login.jsx";
 
 
 // La exportación por default - no lleva llaves
@@ -14,6 +15,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -31,7 +33,8 @@ const Layout = () => {
             {/* <Route path="/demo" element={<Demo />} />{" "} */}
             <Route path="/single/:theid" element={<Single />} />{" "}
             {/* <Route path="/singleplanet/:theid" element={<Singleplanet />} />{" "} */}
-            <Route path="/singlevehicle/:theid" element={<Singlevehicle />} />{" "}
+            {/* <Route path="/singlevehicle/:theid" element={<Singlevehicle />} />{" "} */}
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<h1> Not found! </h1>} />
           </Routes>{" "}
           <Footer />
