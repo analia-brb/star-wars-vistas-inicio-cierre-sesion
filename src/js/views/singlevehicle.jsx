@@ -18,7 +18,7 @@ export const Single = (props) => {
   // }
 
   useEffect (() => {
-    actions.obtenerCadaPersonaje(params.theid);
+    actions.obtenerCadaVehiculo(params.theid);
 
   },[])
   
@@ -30,15 +30,11 @@ export const Single = (props) => {
 
 
       
-    <img src={"https://starwars-visualguide.com/assets/img/characters/"+(params.theid)+".jpg"}alt="" />
+    <img src={"https://starwars-visualguide.com/assets/img/vehicles/"+(params.theid)+".jpg"}alt="" />
+      <p className="display-5">Model: {store.personajesInfo.properties?.model}</p>
       <p className="display-5">Name: {store.personajesInfo.properties?.name}</p>
-      <p className="display-5">Birth Date: {store.personajesInfo.properties?.birth_year}</p>
-      <p className="display-5">Gender: {store.personajesInfo.properties?.gender}</p>
-      <p className="display-5">Height: {store.personajesInfo.properties?.height}</p>
-      <p className="display-5">Mass: {store.personajesInfo.properties?.mass}</p>
-      <p className="display-5">Skin-Color: {store.personajesInfo.properties?.skin_color}</p>
-      <p className="display-5">Eye-Color: {store.personajesInfo.properties?.eye_color}</p>
-      <p className="display-5">Hair-Color: {store.personajesInfo.properties?.hair_color}</p>
+      <p className="display-5">Passenger: {store.personajesInfo.properties?.passenger}</p>
+      <p className="display-5">Class: {store.personajesInfo.properties?.vehicle_class}</p>
 
 
       <hr className="my-4" />
@@ -51,8 +47,9 @@ export const Single = (props) => {
   );
 };
 
-Single.propTypes = {
+Singlevehicle.propTypes = {
   match: PropTypes.object,
 };
+
 
 

@@ -25,7 +25,7 @@ export const Home = () => {
 
   return (
     
-      <div className="container d-flex row">
+      <div className="container d-flex row ms-5">
         {store.personajes.map((item) => (
           <Card nombre={item.name} key={item.uid} id={item.uid} />
           // Le mando nombre y uid y lo coloca en el componente Card

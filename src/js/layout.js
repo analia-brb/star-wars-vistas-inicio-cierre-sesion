@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home.jsx";
 // import { Demo } from "./views/demo";
 import { Single } from "./views/single.jsx";
+import { Singlevehicle } from "./views/single.jsx";
+
 
 // La exportación por default - no lleva llaves
 
@@ -28,6 +30,8 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
             {/* <Route path="/demo" element={<Demo />} />{" "} */}
             <Route path="/single/:theid" element={<Single />} />{" "}
+            {/* <Route path="/singleplanet/:theid" element={<Singleplanet />} />{" "} */}
+            <Route path="/singlevehicle/:theid" element={<Singlevehicle />} />{" "}
             <Route path="*" element={<h1> Not found! </h1>} />
           </Routes>{" "}
           <Footer />
