@@ -25,20 +25,22 @@ function handleLogout() {
           className="m-4"
         />
       </Link>
-      <div className="ml-auto">
-        <div className="btn-group">
-          <Link to= "/login"><button className={"btn btn-primary "+ store.view}>Login</button></Link>
 
-          <button className={"btn btn-primary "+ store.hidden} onClick={handleLogout}>Logout</button> 
+      <div className="row-col-2 d-grid gap-2 d-md-flex right-content-md-end">
+        
+          <Link to= "/login"><button className={"btn btn-info "+ store.view}><b>Login</b></button></Link>
+
+          <button className={"btn btn-info "+ store.hidden} onClick={handleLogout}><b>Logout</b></button> 
 
           <button
             type="button"
-            className="btn btn-info dropdown-toggle m-4"
+            className="btn btn-info dropdown-toggle m-6"
             data-bs-toggle="dropdown"
             aria-expanded="false">
             <b>Favorites</b>
           </button>
-
+      
+        
           <ul className="dropdown-menu dropdown-menu-end">
             {store.favoritos?.map((item, index) => (
               <li key={index}>{item}<button className="fas fa-trash-alt align-items-end "
@@ -50,7 +52,6 @@ function handleLogout() {
             
           </ul>
         </div>
-      </div>
     </nav>
   );
 };
