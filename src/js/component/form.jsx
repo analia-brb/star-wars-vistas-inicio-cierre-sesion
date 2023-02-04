@@ -15,7 +15,7 @@ const Form = () => {
  }
  return (
   <>
-  {store.auth === true ? <Navigate to="/"/>:
+  {store.auth === true ? (<Navigate to="/home"/>):(
 
 <form className="w-50 mx-auto" onSubmit={enviarDatos}>
   <div className="mb-3">
@@ -28,7 +28,7 @@ const Form = () => {
   </div>
   
   <button type="submit" className="btn btn-info"><b>Submit</b></button>
-</form>}
+</form>)}
 </>
 )
 

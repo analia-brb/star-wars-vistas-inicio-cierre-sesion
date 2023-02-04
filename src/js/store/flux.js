@@ -30,8 +30,8 @@ const getState = ({
             //     }))
             //     .catch((err) => console.log(err));
 
-            login: (userEmail, userPassword) => {
-                fetch('https://3000-analiabrb-authenticatio-ff838dpsmso.ws-us84.gitpod.io/login', {
+            signup: (userEmail, userPassword) => {
+                fetch('https://3000-analiabrb-authenticatio-ff838dpsmso.ws-us85.gitpod.io/signup', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -40,6 +40,33 @@ const getState = ({
                         body: JSON.stringify({
                             "email": userEmail,
                             "password": userPassword
+                        }) // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        if (response.status === 200) {
+                            alert("El usuario fue creado con éxito")
+                        }
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                        if (data.msg === "El usuario ya existe") {
+                            alert(data.msg)
+                        }
+                    })
+                    .catch((err) => console.log(err))
+            },
+
+            login: (Email, Password) => {
+                fetch('https://3000-analiabrb-authenticatio-ff838dpsmso.ws-us85.gitpod.io/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": Email,
+                            "password": Password
                         }) // body data type must match "Content-Type" header
                     })
                     .then((response) => {

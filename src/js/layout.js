@@ -7,6 +7,7 @@ import { Home } from "./views/home.jsx";
 import { Single } from "./views/single.jsx";
 // import { Singlevehicle } from "./views/single.jsx";
 import { Login } from "./views/login.jsx";
+import { Signup} from "./views/signup.jsx";
 
 
 // La exportación por default - no lleva llaves
@@ -29,12 +30,14 @@ const Layout = () => {
         <ScrollToTop>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Signup />} />
             {/* <Route path="/demo" element={<Demo />} />{" "} */}
             <Route path="/single/:theid" element={<Single />} />{" "}
             {/* <Route path="/singleplanet/:theid" element={<Singleplanet />} />{" "} */}
             {/* <Route path="/singlevehicle/:theid" element={<Singlevehicle />} />{" "} */}
             <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<h1> Not found! </h1>} />
           </Routes>{" "}
           <Footer />

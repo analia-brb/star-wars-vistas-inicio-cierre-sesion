@@ -16,6 +16,11 @@ function handleLogout() {
 	navigate("/login")
 }
 
+function handleSignup() {
+	actions.signup()
+	navigate("/signup")
+}
+
   return (
     <nav className="navbar navbar-light bg-black mb-3">
       <Link to="/">
@@ -27,11 +32,14 @@ function handleLogout() {
       </Link>
 
       <div className="row-col-2 d-grid gap-2 d-md-flex right-content-md-end">
+
+          <Link to= "/signup"><button className={"btn btn-info "} onClick={handleSignup}><b>Sign Up</b></button></Link>
         
           <Link to= "/login"><button className={"btn btn-info "+ store.view}><b>Login</b></button></Link>
 
           <button className={"btn btn-info "+ store.hidden} onClick={handleLogout}><b>Logout</b></button> 
 
+          
           <button
             type="button"
             className="btn btn-info dropdown-toggle m-6"
