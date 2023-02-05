@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.js";
-import {useNavigate, Navigate} from "react-router-dom"
+import {useNavigate, Navigate, useLocation} from "react-router-dom";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -20,6 +20,18 @@ function handleSignup() {
 	actions.signup()
 	navigate("/signup")
 }
+
+// const HomeButton = () => {
+//   return window.location.pathname === '/home' ? (
+//     <button
+//           type="button"
+//           className="btn btn-info dropdown-toggle m-6"
+//           data-bs-toggle="dropdown"
+//           aria-expanded="false">
+//           <b>Favorites</b>
+//         </button>
+//   ) : null;
+// };
 
   return (
     <nav className="navbar navbar-light bg-black mb-3">
@@ -40,11 +52,7 @@ function handleSignup() {
           <button className={"btn btn-info "+ store.hidden} onClick={handleLogout}><b>Logout</b></button> 
 
           
-          <button
-            type="button"
-            className="btn btn-info dropdown-toggle m-6"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <button type="button" className="btn btn-info dropdown-toggle m-6" data-bs-toggle="dropdown" aria-expanded="false">
             <b>Favorites</b>
           </button>
       
@@ -63,3 +71,5 @@ function handleSignup() {
     </nav>
   );
 };
+
+// export default HomeButton;
