@@ -31,7 +31,7 @@ const getState = ({
             //     .catch((err) => console.log(err));
 
             signup: (userEmail, userPassword) => {
-                fetch('https://3000-analiabrb-authenticatio-ff838dpsmso.ws-us85.gitpod.io/signup', {
+                fetch('https://3000-analiabrb-authenticatio-lnywymxji82.ws-us85.gitpod.io/signup', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const getState = ({
             },
 
             login: (Email, Password) => {
-                fetch('https://3000-analiabrb-authenticatio-ff838dpsmso.ws-us85.gitpod.io/login', {
+                fetch('https://3000-analiabrb-authenticatio-lnywymxji82.ws-us85.gitpod.io/login', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

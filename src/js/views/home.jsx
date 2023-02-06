@@ -5,10 +5,19 @@ import {Link} from "react-router-dom";
 import Card from "../component/card.jsx";
 import {Context} from "../store/appContext.js"
 
+const MyView = () => (
+  <div>
+    <h1>Mi vista</h1>
+    <MyButton />
+  </div>
+);
+
+
+
 export const Home = () => {
   const [personajes, setPersonajes] = useState([]);
   const {store}=useContext(Context)
-  console.log(store.demo);
+  // console.log(store.demo);
   console.log(store.personajes);
 
   // function obtenerInfoPersonajes() {
@@ -34,3 +43,5 @@ export const Home = () => {
     
   );
 };
+
+export default MyView;

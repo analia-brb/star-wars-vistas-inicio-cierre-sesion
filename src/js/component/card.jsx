@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import { Context } from "../store/appContext";
 
 
+
 const Card = (props) => {
   console.log(props);
   const {store, actions}=useContext(Context)

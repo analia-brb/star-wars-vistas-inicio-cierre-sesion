@@ -21,17 +21,17 @@ function handleSignup() {
 	navigate("/signup")
 }
 
-// const HomeButton = () => {
-//   return window.location.pathname === '/home' ? (
-//     <button
-//           type="button"
-//           className="btn btn-info dropdown-toggle m-6"
-//           data-bs-toggle="dropdown"
-//           aria-expanded="false">
-//           <b>Favorites</b>
-//         </button>
-//   ) : null;
-// };
+const HomeButton = () => {
+  return window.location.pathname === '/home' ? (
+    <buttong
+          type="button"
+          className="btn btn-info dropdown-toggle m-6"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <b>Favorites</b>
+        </buttong>
+  ) : null;
+};
 
   return (
     <nav className="navbar navbar-light bg-black mb-3">
